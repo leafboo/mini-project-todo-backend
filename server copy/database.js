@@ -2,7 +2,7 @@ import mysql from 'mysql2'
 import dotenv from 'dotenv'// required for using .env
 dotenv.config()
 
-const urlDB = `mysql://${process.env.MYSQLUSER}:${process.env.MYSQL_ROOT_PASSWORD}@${process.env.RAILWAY_TCP_PROXY_DOMAIN}:${process.env.RAILWAY_TCP_PROXY_PORT}/${process.env.MYSQL_DATABASE}`
+const urlDB = `mysql://${process.env.MYSQLUSER}:${process.env.MYSQL_ROOT_PASSWORD}@${process.env.MYSQLHOST}:${process.env.MYSQLPORT}/${process.env.MYSQL_DATABASE}`
 const pool = mysql.createPool(urlDB).promise()
 
 export async function getTodoList() {
