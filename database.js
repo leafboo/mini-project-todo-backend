@@ -34,3 +34,22 @@ export async function deleteTodo(id) {
   `, [id])
 }
 
+
+
+
+
+
+
+export async function createTable() {
+  await pool.query(`CREATE TABLE todoList (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    todo VARCHAR(255) NOT NULL
+  )`)
+}
+
+/*
+main problem: spilling of food 
+sub problems: inefficient use of space for foods
+              lack of organization
+*/
+ 
