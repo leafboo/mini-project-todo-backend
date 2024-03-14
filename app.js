@@ -12,8 +12,13 @@ app.use(cors());
 
 
 app.get('/todoList', async (req, res) => {
-  const todoList = await getTodoList()
-  res.status(200).send(todoList)
+  try {
+    const todoList = await getTodoList()
+    res.status(200).send(todoList)
+  } catch(err) {
+    next(err)
+  }
+  
 })
 
 app.get('/todoList/:id', async (req, res) => {
